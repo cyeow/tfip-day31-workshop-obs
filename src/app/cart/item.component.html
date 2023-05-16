@@ -1,0 +1,10 @@
+<mat-card-content style="display: inline-flex; align-items:center;">
+    <img matCardImage src="../../assets/fruits/{{ item.name }}.png" alt="" style="width: 50px; height: auto;">
+    <mat-card-title><span>{{ item.name.replace('_', ' ') | titlecase }}</span>    </mat-card-title>
+</mat-card-content>
+<mat-card-actions align="end">
+    <button mat-button type="button" (click)="incrementQty()">+</button>
+    <input style="border: 0px;" type="numeric" [value]="item.quantity" #qty (input)="updateQty(+qty.value)" style="width: 30px; text-align: center;"/>
+    <button mat-button type="button" (click)="decrementQty()">-</button>
+    <button mat-raised-button color="warn" type="button" (click)="removeFromCart()">Remove</button>    
+</mat-card-actions>
